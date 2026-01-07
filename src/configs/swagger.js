@@ -26,7 +26,7 @@ const options = {
             }
         ]
     },
-    apis: ['./src/docs/*.ts']
+    apis: ['./src/docs/*.ts', './src/docs/*.js']
 };
 const swaggerSpec = (0, swagger_jsdoc_1.default)(options);
 exports.default = swaggerSpec;

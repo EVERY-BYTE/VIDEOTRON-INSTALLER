@@ -148,3 +148,42 @@
  *       200:
  *         description: Video deleted successfully
  */
+/**
+ * @swagger
+ * /videotron/api/v1/videos/upload:
+ *   post:
+ *     summary: Upload video to server
+ *     tags: [VIDEOS]
+ *     security:
+ *       - BearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               video:
+ *                 type: string
+ *                 format: binary
+ *                 description: Video file (mp4, mov, etc)
+ *     responses:
+ *       201:
+ *         description: Video uploaded successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Video uploaded successfully
+ *                 fileName:
+ *                   type: string
+ *                   example: 8b6f0a21-2f8b-4d19-a88b.mp4
+ *                 url:
+ *                   type: string
+ *                   example: http://localhost:3000/videos/8b6f0a21-2f8b-4d19-a88b.mp4
+ *       400:
+ *         description: Video file is required
+ */
